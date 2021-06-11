@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-gh-pages/static/js/main.20d5206e.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.20d5206e.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.bbda4dd4.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.bbda4dd4.js.map",
-    "static/js/2.8e3ae433.chunk.js": "/react-gh-pages/static/js/2.8e3ae433.chunk.js",
-    "static/js/2.8e3ae433.chunk.js.map": "/react-gh-pages/static/js/2.8e3ae433.chunk.js.map",
-    "static/js/3.7c1d2bba.chunk.js": "/react-gh-pages/static/js/3.7c1d2bba.chunk.js",
-    "static/js/3.7c1d2bba.chunk.js.map": "/react-gh-pages/static/js/3.7c1d2bba.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "static/js/2.8e3ae433.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.8e3ae433.chunk.js.LICENSE.txt",
-    "static/media/api.md": "/react-gh-pages/static/media/api.1e2a0953.md"
+    "main.js": "/reptile-app/static/js/main.20d5206e.chunk.js",
+    "main.js.map": "/reptile-app/static/js/main.20d5206e.chunk.js.map",
+    "runtime-main.js": "/reptile-app/static/js/runtime-main.90e1af55.js",
+    "runtime-main.js.map": "/reptile-app/static/js/runtime-main.90e1af55.js.map",
+    "static/js/2.8e3ae433.chunk.js": "/reptile-app/static/js/2.8e3ae433.chunk.js",
+    "static/js/2.8e3ae433.chunk.js.map": "/reptile-app/static/js/2.8e3ae433.chunk.js.map",
+    "static/js/3.7c1d2bba.chunk.js": "/reptile-app/static/js/3.7c1d2bba.chunk.js",
+    "static/js/3.7c1d2bba.chunk.js.map": "/reptile-app/static/js/3.7c1d2bba.chunk.js.map",
+    "index.html": "/reptile-app/index.html",
+    "static/js/2.8e3ae433.chunk.js.LICENSE.txt": "/reptile-app/static/js/2.8e3ae433.chunk.js.LICENSE.txt",
+    "static/media/api.md": "/reptile-app/static/media/api.1e2a0953.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.bbda4dd4.js",
+    "static/js/runtime-main.90e1af55.js",
     "static/js/2.8e3ae433.chunk.js",
     "static/js/main.20d5206e.chunk.js"
   ]
