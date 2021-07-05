@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import { Navbar, Nav, Button, Card } from 'react-bootstrap'
-
-import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
-import Markdown from 'markdown-to-jsx'
 import axios from 'axios'
+
+import NavbarModule from './Components/NavbarModule'
+import Navigator from './Components/Navigator'
 
 const App = () => {
     const [active, setActive] = useState('')
-    const [searchValue, setSearchValue] = useState('')
     const [reptile, setReptile] = useState({})
     const [markdown, setMarkdown] = useState(null)
 
@@ -40,65 +37,6 @@ const App = () => {
             .catch((err) => console.log(err))
     }, [])
 
-    const renderSwitch = () => {
-        switch (active) {
-            case 'api':
-                return (
-                    <div
-                        style={{
-                            marginLeft: '15%',
-                            marginRight: '15%',
-                            marginTop: 20,
-                        }}
-                    >
-                        <Markdown options={{ forceBlock: true }}>
-                            {markdown}
-                        </Markdown>
-                    </div>
-                )
-            // case 'find':
-            //     return (
-            //         <div>
-            //             {for const }
-
-            //         </div>
-            //     )
-            default:
-                return (
-                    <div style={{ padding: 50 }}>
-                        <div style={{ padding: 10 }}>Random Reptile:</div>
-                        <Card>
-                            <Card.Header>
-                                Here's your random reptile
-                            </Card.Header>
-                            <Card.Body>
-                                <Card.Title>
-                                    Species: {reptile.Species}
-                                </Card.Title>
-                                <Card.Text>Author: {reptile.Author}</Card.Text>
-                                <Card.Text>
-                                    Common Name: {reptile.Common_name}
-                                </Card.Text>
-                                <Card.Text>
-                                    Subspecies: {reptile.Subspecies}
-                                </Card.Text>
-                                <Card.Text>
-                                    Familyetc: {reptile.Author}
-                                </Card.Text>
-
-                                <Button
-                                    variant="primary"
-                                    onClick={onButtonSubmit}
-                                >
-                                    google images
-                                </Button>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                )
-        }
-    }
-
     const onButtonSubmit = (e) => {
         e.preventDefault()
         window.open(
@@ -106,57 +44,19 @@ const App = () => {
         )
     }
 
-    const onClick = (e) => {
-        e.preventDefault()
-        setActive(e.target.name)
+    const handleNavChange = (value) => {
+        setActive(value)
     }
-
-    // const onSearchChange = (e) => {
-    //     e.preventDefault()
-    //     setSearchValue(e.target.value)
-    // }
-
-    // const onFormSubmit = (e) => {
-    //     e.preventDefault()
-    //     console.log(searchValue)
-    // }
 
     return (
         <div className="App">
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand name="home">Reptile-API</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link name="home" onClick={onClick}>
-                            Random Reptile
-                        </Nav.Link>
-                        <Nav.Link name="api" onClick={onClick}>
-                            API
-                        </Nav.Link>
-                        {/* <Nav.Link name="find" onClick={onClick}>
-                            Find Reptile
-                        </Nav.Link> */}
-                    </Nav>
-                    {/* <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="Search Reptile"
-                            className="mr-2"
-                            aria-label="Search"
-                            value={searchValue}
-                            onChange={onSearchChange}
-                        />
-                        <Button
-                            variant="outline-success"
-                            onClick={onFormSubmit}
-                        >
-                            Search
-                        </Button>
-                    </Form> */}
-                </Navbar.Collapse>
-            </Navbar>
-            <div>{renderSwitch()}</div>
+            <NavbarModule navigate={handleNavChange} />
+            <Navigator
+                active={active}
+                reptile={reptile}
+                onButtonSubmit={onButtonSubmit}
+                markdown={markdown}
+            />
             <div
                 className="footer"
                 style={{
